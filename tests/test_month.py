@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 
-"""Tests for `src` package."""
+"""Tests for `month` package."""
 
 import pytest
+
+
+from month import month
 
 
 @pytest.fixture

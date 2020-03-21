@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use month in a project::
+To use month package in a project::
 
     import month

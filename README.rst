@@ -1,6 +1,6 @@
-=====
-month
-=====
+=============
+month package
+=============
 
 
 .. image:: https://img.shields.io/pypi/v/month.svg
@@ -16,10 +16,10 @@ month
 
 
 
-a module that deals with dates with month as minimum unit
+a package that handles months
 
 
-* Free software: GNU General Public License v3
+* Free software: MIT license
 * Documentation: https://month.readthedocs.io.
 
 

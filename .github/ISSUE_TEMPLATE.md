@@ -1,4 +1,4 @@
-* month version:
+* month package version:
 * Python version:
 * Operating System:
 

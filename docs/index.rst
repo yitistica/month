@@ -1,4 +1,4 @@
-Welcome to month's documentation!
+Welcome to month package's documentation!
 ======================================
 
 .. toctree::

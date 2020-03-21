@@ -38,8 +38,8 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-month could always use more documentation, whether as part of the
-official month docs, in docstrings, or even on the web in blog posts,
+month package could always use more documentation, whether as part of the
+official month package docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
