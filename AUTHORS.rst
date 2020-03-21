@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Yi Q <yitistica@gmail.com>
+* Yi Q <yitistica@outlook.com>
 
 Contributors
 ------------

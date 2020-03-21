@@ -18,7 +18,7 @@ test_requirements = ['pytest>=3', ]
 
 setup(
     author="Yi Q",
-    author_email='yitistica@gmail.com',
+    author_email='yitistica@outlook.com',
     python_requires='>=3.5',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -31,14 +31,14 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description="a module that deals with dates with month as minimum unit",
+    description="a module that deals with with months.",
     install_requires=requirements,
     license="GNU General Public License v3",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='month',
     name='month',
-    packages=find_packages(include=['month', 'month.*']),
+    packages=find_packages(include=['src', 'src.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
