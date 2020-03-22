@@ -42,7 +42,7 @@ def _check_date_fields(year, month):
     if not MINYEAR <= year <= MAXYEAR:
         raise ValueError('year must be in %d..%d' % (MINYEAR, MAXYEAR), year)
     if not 1 <= month <= 12:
-        raise ValueError('src must be in 1..12', month)
+        raise ValueError('month must be in 1..12', month)
 
     return year, month
 
@@ -111,29 +111,50 @@ class MDelta:
 
         self._months = int(years * 12 + months)
 
+    def __str__(self):
+        return "%dmonths" % self._months
+
+    def __repr__(self):
+        return 'mdelta(%d)' % self._months
+
     @property
     def months(self):
         """months"""
         return self._months
 
-    def __add__(self, other):
+    def _add(self, other):
         if isinstance(other, MDelta):
             return MDelta(months=self._months + other._months)
+        elif isinstance(other, int):
+            return MDelta(months=self._months + other)
         else:
             return NotImplemented
 
-    __radd__ = __add__
+    def __add__(self, other):
+        return self._add(other)
 
-    def __sub__(self, other):
+    def __radd__(self, other):
+        if isinstance(other, MDelta):
+            return self._add(other)
+        else:
+            return NotImplemented
+
+    def _subtract(self, other):
         if isinstance(other, MDelta):
             return MDelta(months=self._months - other._months)
+        elif isinstance(other, int):
+            return MDelta(months=self._months - other)
         else:
             return NotImplemented
+
+    def __sub__(self, other):
+        return self._subtract(other)
 
     def __rsub__(self, other):
         if isinstance(other, MDelta):
             return -self + other
-        return NotImplemented
+        else:
+            return NotImplemented
 
     def __pos__(self):
         return self
@@ -231,7 +252,6 @@ class Month:
     def fromisoformat(cls, month_string):
         if not isinstance(month_string, str):
             raise TypeError('fromisoformat: argument must be str')
-
         try:
             assert len(month_string) == 10
             return cls(*_parse_isoformat_month(month_string))
@@ -239,6 +259,9 @@ class Month:
             raise ValueError(f'Invalid isoformat string: {month_string!r}')
 
     __str__ = isoformat
+
+    def __repr__(self):
+        return 'month(%d, %d)' % (self._year, self._month)
 
     @classmethod
     def fromordinal(cls, n):
