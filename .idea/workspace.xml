@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8ac4b5e-3e1b-45a5-8f94-29a76d0ccae0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/month/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/month/month.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/month/x_month.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/month.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/month.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rSettings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_mdelta.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.rst" beforeDir="false" afterPath="$PROJECT_DIR$/CONTRIBUTING.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HISTORY.rst" beforeDir="false" afterPath="$PROJECT_DIR$/HISTORY.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/installation.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/installation.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/usage.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/usage.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/month.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/x_month.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/month/month.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/month/month.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_month.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_month.py" afterDir="false" />
     </list>
@@ -47,15 +25,87 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yeech\Desktop\git\month\tests" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yeech\Desktop\git\month\scr\month" />
       <recent name="$PROJECT_DIR$/month" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest in test_mdelta.py">
+    <configuration name="pytest for test_mdelta.test_delta_operations" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="month" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_mdelta.test_delta_operations&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_mdelta.test_mdelta_construct" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="month" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_mdelta.test_mdelta_construct&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_mdelta.test_mdelta_construction" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="month" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_mdelta.test_mdelta_construction&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_mdelta.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="month" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_mdelta.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest in test_mdelta.py" />
+        <item itemvalue="Python tests.pytest for test_mdelta.test_delta_operations" />
+        <item itemvalue="Python tests.pytest for test_mdelta.test_mdelta_construct" />
+        <item itemvalue="Python tests.pytest for test_mdelta.test_mdelta_construction" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -83,9 +133,42 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1439" y="166" key="SettingsEditor" timestamp="1584797380882">
+    <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584893539990">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584893539990" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584879200901">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584879200901" />
+    <state width="1899" height="275" key="GridCell.Tab.0.bottom" timestamp="1584892383352">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
+    <state width="1914" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
+    <state width="1899" height="275" key="GridCell.Tab.0.center" timestamp="1584892383352">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
+    <state width="1914" height="189" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
+    <state width="1899" height="275" key="GridCell.Tab.0.left" timestamp="1584892383352">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
+    <state width="1914" height="189" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
+    <state width="1899" height="275" key="GridCell.Tab.0.right" timestamp="1584892383352">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
+    <state width="1914" height="189" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
+    <state x="481" y="166" key="SettingsEditor" timestamp="1584879508880">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
     <state x="-1439" y="166" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584797380882" />
+    <state x="481" y="166" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584879508880" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584879736669">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584879736669" />
   </component>
 </project>

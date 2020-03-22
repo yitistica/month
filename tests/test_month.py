@@ -3,9 +3,7 @@
 """Tests for `month` package."""
 
 import pytest
-
-
-from month import month
+from month import Month
 
 
 @pytest.fixture

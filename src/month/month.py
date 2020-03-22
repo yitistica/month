@@ -94,7 +94,7 @@ class MDelta:
     """
     time delta for src:
     """
-    def __new__(cls, months: int, **kwargs):
+    def __new__(cls, months: int = 0, **kwargs):
         if 'years' in kwargs:
             years = kwargs.pop('years')
             _check_int_field(years)  # only int accepted;
@@ -103,14 +103,13 @@ class MDelta:
         self = object.__new__(cls)
         return self
 
-    def __init__(self, months: int, **kwargs):
+    def __init__(self, months: int = 0, **kwargs):
         if 'years' in kwargs:
             years = kwargs.pop('years')
-            _check_int_field(years)  # only int accepted;
         else:
             years = 0
 
-        self._months = years * 12 + months
+        self._months = int(years * 12 + months)
 
     @property
     def months(self):
@@ -150,7 +149,7 @@ class MDelta:
 
     def __mul__(self, other):
         if isinstance(other, int):
-            return timedelta(self._months * other)
+            return MDelta(self._months * other)
         else:
             return NotImplemented
 
