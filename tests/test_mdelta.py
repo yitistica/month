@@ -50,6 +50,7 @@ def test_mdelta_construct(check_int_field_func, kwargs, expected):
                 MDelta(**kwargs)
             assert execinfo.value.args[0] == 'integer argument expected, got float'
 
+
 def test_delta_operations():
     delta_1 = MDelta(years=2, months=5)
     delta_2 = MDelta(months=29)

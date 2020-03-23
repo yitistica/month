@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 class XMonth(Month):
     """
-    extended src functions:
+    extended month functions:
     """
     def __new__(cls, year: int, month: int):
         return super().__new__(cls, year=year, month=month)
@@ -15,8 +15,8 @@ class XMonth(Month):
     @classmethod
     def from_integer(cls, date_int):
         """
-        convert int representation to src;
-        :param date_int: yearmonth, 202001, src must consist of 2 places;
+        convert int representation to month;
+        :param date_int: yearmonth, 202001, month must consist of 2 places;
         :return:
         """
         date_int = _check_int_field(date_int)

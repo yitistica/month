@@ -1,5 +1,5 @@
 """
-mdelta and src modules that mimic timedelta & datetime.date;
+mdelta and month modules that mimic timedelta & datetime.date;
 build on top of datetime;
 """
 from datetime import datetime, date, timedelta
@@ -49,15 +49,13 @@ def _check_date_fields(year, month):
 
 # derive from datetime
 def _parse_isoformat_month(mstr):
-    # It is assumed that this function will only be called with a
-    # string of length exactly 7, and (though this is not used) ASCII-only
-    year = int(mstr[0:4])
-    if mstr[4] != '-':
-        raise ValueError('Invalid src separator: %s' % mstr[4])
-
-    month = int(mstr[5:7])
-
-    return [year, month]
+    try:
+        year, month = mstr.rsplit('-', 1)
+        year = int(year)
+        month = int(month)
+        return year, month
+    except ValueError:
+        raise ValueError('Invalid month format, use %Y-%m')
 
 
 def _add_month(year, month, additional_month):
@@ -83,7 +81,7 @@ def _days_before_year(year):
 
 # from datetime;
 def _days_in_month(year, month):
-    "year, src -> number of days in that src in that year."
+    "year, month -> number of days in that month in that year."
     assert 1 <= month <= 12, month
     if month == 2 and _is_leap(year):
         return 29
@@ -92,7 +90,7 @@ def _days_in_month(year, month):
 
 class MDelta:
     """
-    time delta for src:
+    time delta for month:
     """
     def __new__(cls, months: int = 0, **kwargs):
         if 'years' in kwargs:
@@ -213,7 +211,7 @@ class MDelta:
 
 class Month:
     """
-    src
+    month
     """
     def __new__(cls, year: int, month: int):
         _check_date_fields(year, month)
@@ -231,12 +229,12 @@ class Month:
 
     @property
     def month(self):
-        """src (1-12)"""
+        """month (1-12)"""
         return self._month
 
     @property
     def quarter(self):
-        return self.month // 3
+        return self.month // 3 + 1
 
     def tuple(self):
         return self.year, self.month
@@ -252,20 +250,17 @@ class Month:
     def fromisoformat(cls, month_string):
         if not isinstance(month_string, str):
             raise TypeError('fromisoformat: argument must be str')
-        try:
-            assert len(month_string) == 10
-            return cls(*_parse_isoformat_month(month_string))
-        except Exception:
-            raise ValueError(f'Invalid isoformat string: {month_string!r}')
+
+        return cls(*_parse_isoformat_month(month_string))
 
     __str__ = isoformat
 
     def __repr__(self):
-        return 'month(%d, %d)' % (self._year, self._month)
+        return 'Month(%d, %d)' % (self._year, self._month)
 
     @classmethod
     def fromordinal(cls, n):
-        _date = date.fromordinal(n=n)
+        _date = date.fromordinal(n)
         return cls(_date.year, _date.month)
 
     @classmethod
@@ -303,22 +298,25 @@ class Month:
         else:
             return NotImplemented
 
-    def add(self, m_delta):
-        if isinstance(m_delta, MDelta):
-            new_year, new_month = _add_month(self.year, self.month, m_delta.months)
+    def add(self, delta):
+        if isinstance(delta, MDelta):
+            new_year, new_month = _add_month(self.year, self.month, delta.months)
             return Month(new_year, new_month)
-        elif isinstance(m_delta, int):
-            self.add(MDelta(months=m_delta))
-
-    def subtract_delta(self, other):
-        if isinstance(other, MDelta):
-            other = -other
-            new_year, new_month = _add_month(self.year, self.month, other.months)
-            return Month(new_year, new_month)
-        elif isinstance(other, int):
-            self.subtract_delta(MDelta(months=other))
+        elif isinstance(delta, int):
+            return self.add(MDelta(months=delta))
         else:
-            raise TypeError(f"subtracting {type(other)} type is not allowed.")
+            raise TypeError(f"adding {type(delta)} type is not allowed.")
+
+    def subtract(self, delta):
+        if isinstance(delta, MDelta):
+            delta = -delta
+            new_year, new_month = _add_month(self.year, self.month, delta.months)
+            return Month(new_year, new_month)
+        elif isinstance(delta, int):
+            mdelta = MDelta(months=delta)
+            return self.subtract(mdelta)
+        else:
+            raise TypeError(f"subtracting {type(delta)} type is not allowed.")
 
     def diff(self, other):
         """
@@ -337,9 +335,9 @@ class Month:
 
     def __sub__(self, other):
         if isinstance(other, MDelta):
-            self.subtract_delta(other)
+            return self.subtract(other)
         elif isinstance(other, Month):
-            self.diff(other)
+            return self.diff(other)
 
     def strftime(self, fmt):
         return fmt.replace('%Y', self.year).replace("%m", self.month)
@@ -369,3 +367,4 @@ class Month:
         y, m = self._year, self._month
         y2, m2 = other._year, other._month
         return _cmp((y, m), (y2, m2))
+

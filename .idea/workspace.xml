@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8ac4b5e-3e1b-45a5-8f94-29a76d0ccae0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/month.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/month.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/month/month.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/month/month.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/month/x_month.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/month/x_month.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_mdelta.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_mdelta.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_month.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_month.py" afterDir="false" />
     </list>
@@ -38,7 +37,28 @@
       <recent name="C:\Users\yeech\Desktop\git\month\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_month.test_month_construct">
+  <component name="RunManager" selected="Python tests.pytest for test_month.test_properties">
+    <configuration name="month" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="month" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/month" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/month/month.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="month" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -58,21 +78,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_mdelta.test_delta_operations" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="month" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_mdelta.test_delta_operations&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest for test_mdelta.test_mdelta_construct" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
@@ -105,7 +110,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_mdelta.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_month.test_properties" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="month" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -116,17 +121,17 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_mdelta.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_month.test_properties&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_month.test_properties" />
+        <item itemvalue="Python.month" />
         <item itemvalue="Python tests.pytest for test_month.test_month_construct" />
         <item itemvalue="Python tests.pytest for test_mdelta.test_mdelta_construct" />
         <item itemvalue="Python.scratch" />
-        <item itemvalue="Python tests.pytest for test_mdelta.test_delta_operations" />
-        <item itemvalue="Python tests.pytest in test_mdelta.py" />
       </list>
     </recent_temporary>
   </component>
@@ -160,39 +165,56 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584901542486" />
-    <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584893539990">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="86" y="99" width="1621" height="922" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584990222222">
+      <screen x="0" y="23" width="1792" height="1042" />
     </state>
     <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584893539990" />
+    <state x="86" y="99" width="1621" height="922" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1792.1042@0.23.1792.1042" timestamp="1584990222222" />
     <state x="424" y="232" key="FileChooserDialogImpl" timestamp="1584898961918">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="424" y="232" key="FileChooserDialogImpl/0.0.1792.1120@0.0.1792.1120" timestamp="1584898961918" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584879200901" />
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1584902749203">
+    <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1584990301182">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1584902749203" />
+    <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1584990301182" />
     <state width="1899" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
     <state width="1914" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
-    <state width="1771" height="318" key="GridCell.Tab.0.center" timestamp="1584902749202">
+    <state width="1771" height="318" key="GridCell.Tab.0.center" timestamp="1584990301181">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1584902749202" />
+    <state width="1771" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1584990301181" />
     <state width="1899" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
     <state width="1914" height="189" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
-    <state width="1771" height="318" key="GridCell.Tab.0.left" timestamp="1584902749201">
+    <state width="1771" height="318" key="GridCell.Tab.0.left" timestamp="1584990301181">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1584902749201" />
+    <state width="1771" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1584990301181" />
     <state width="1899" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
     <state width="1914" height="189" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
-    <state width="1771" height="318" key="GridCell.Tab.0.right" timestamp="1584902749202">
+    <state width="1771" height="318" key="GridCell.Tab.0.right" timestamp="1584990301182">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1584902749202" />
+    <state width="1771" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1584990301182" />
     <state width="1899" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
     <state width="1914" height="189" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
+    <state width="1771" height="391" key="GridCell.Tab.1.bottom" timestamp="1584990074870">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1771" height="391" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1584990074870" />
+    <state width="1771" height="391" key="GridCell.Tab.1.center" timestamp="1584990074869">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1771" height="391" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1584990074869" />
+    <state width="1771" height="391" key="GridCell.Tab.1.left" timestamp="1584990074868">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1771" height="391" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1584990074868" />
+    <state width="1771" height="391" key="GridCell.Tab.1.right" timestamp="1584990074870">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1771" height="391" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1584990074870" />
     <state x="449" y="179" key="SettingsEditor" timestamp="1584898971271">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
