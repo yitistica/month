@@ -6,9 +6,8 @@
 
 """Tests for `month` package."""
 
-from mock import patch, call
+from mock import patch
 import pytest
-from unittest.mock import Mock
 from month import month as month_module
 from month.month import Month, MDelta, date
 
@@ -80,8 +79,18 @@ def test_properties():
 
     assert Month(2019, 11).add(MDelta(2)) == Month(2019, 11).add(2) == \
             Month(2019, 11) + MDelta(2) == Month(2019, 11) + 2 == Month(2019, 11) - MDelta(-2) == Month(2020, 1)
-    assert Month(2019, 11).subtract(MDelta(2)) == Month(2019, 11).subtract(2) == \
+    assert Month(2019, 11).subtract(MDelta(2)) == Month(2019, 11).subtract(2) == Month(2019, 11) - 2 == \
             Month(2019, 11) - MDelta(2) == Month(2019, 11) + MDelta(-2) == Month(2019, 9)
 
-    print(Month(2019, 11) - 2)
+    assert Month(2019, 11).diff(Month(2019, 9)) == Month(2019, 11) - Month(2019, 9) == MDelta(2)
+
+    assert Month(2019, 1).strftime('%Y/%m') == '2019/01'
+
+    assert Month.strptime('2019/1', '%Y/%m') == Month(2019, 1)
+
+    assert Month(2020, 1).is_year(2020)
+    assert Month(2020, 1).is_month(1)
+    assert Month(2020, 1).is_quarter(1)
+
+
 

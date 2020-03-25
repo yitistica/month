@@ -1,8 +1,8 @@
 """
-mdelta and month modules that mimic timedelta & datetime.date;
-build on top of datetime;
+mdelta and month modules that mimic timedelta & datetime.date but for month as base unit;
+some functionality are derived from datetime module;
 """
-from datetime import datetime, date, timedelta
+from datetime import datetime, date
 
 
 # from datetime:
@@ -13,7 +13,6 @@ def _cmp(x, y):
 # from datetime
 MINYEAR = 1
 MAXYEAR = 9999
-_DAYS_IN_MONTH = [-1, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 
 # from datetime:
@@ -65,27 +64,6 @@ def _add_month(year, month, additional_month):
     new_year = year + years
     new_month = months
     return new_year, new_month
-
-
-# from datetime
-def _is_leap(year):
-    "year -> 1 if leap year, else 0."
-    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
-
-
-def _days_before_year(year):
-    "year -> number of days before January 1st of year."
-    y = year - 1
-    return y*365 + y//4 - y//100 + y//400
-
-
-# from datetime;
-def _days_in_month(year, month):
-    "year, month -> number of days in that month in that year."
-    assert 1 <= month <= 12, month
-    if month == 2 and _is_leap(year):
-        return 29
-    return _DAYS_IN_MONTH[month]
 
 
 class MDelta:
@@ -325,7 +303,7 @@ class Month:
         :return:
         """
         if isinstance(other, Month):
-            diff_month = self._year * 12 + self._month - other._year * 12 + other._month
+            diff_month = self._year * 12 + self._month - other._year * 12 - other._month
             return MDelta(months=diff_month)
         else:
             raise TypeError(f"dif {type(other)} type is not allowed.")
@@ -334,13 +312,13 @@ class Month:
         return self.add(m_delta)
 
     def __sub__(self, other):
-        if isinstance(other, MDelta):
+        if isinstance(other, (MDelta, int)):
             return self.subtract(other)
         elif isinstance(other, Month):
             return self.diff(other)
 
     def strftime(self, fmt):
-        return fmt.replace('%Y', self.year).replace("%m", self.month)
+        return fmt.replace('%Y', str(self.year)).replace("%m", '0' + str(self.month) if self.month < 10 else str(self.month))
 
     @classmethod
     def strptime(cls, date_string, format):
@@ -356,15 +334,10 @@ class Month:
     def is_quarter(self, quarter):
         return self.quarter == quarter
 
-    def if_leap_year(self):
-        return _is_leap(self.year)
-
-    def days(self):
-        return _days_in_month(self.year, self.month)
-
     def _cmp(self, other):
         assert isinstance(other, Month)
         y, m = self._year, self._month
         y2, m2 = other._year, other._month
         return _cmp((y, m), (y2, m2))
+
 
