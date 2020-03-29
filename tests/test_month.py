@@ -88,3 +88,4 @@ def test_properties():
 
     assert pickle.loads(pickle.dumps(Month(2019, 1), protocol=pickle.HIGHEST_PROTOCOL)) == Month(2019, 1)
 
+

@@ -88,3 +88,4 @@ def test_delta_operations():
     assert delta_1 - 5 == MDelta(24)
 
     assert pickle.loads(pickle.dumps(delta_1, protocol=pickle.HIGHEST_PROTOCOL))._months == 29
+

@@ -53,3 +53,4 @@ def test_x_month():
             assert mon == XMonth(2020, 1)
 
     assert _total_months == 3
+
