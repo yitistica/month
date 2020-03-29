@@ -2,14 +2,12 @@
 
 """Tests for `month` package."""
 
-#!/usr/bin/env python
-
-"""Tests for `month` package."""
 
 from mock import patch
 import pytest
 from month import month as month_module
 from month.month import Month, MDelta, date
+import pickle
 
 
 @patch.object(month_module, '_check_date_fields', wraps=month_module._check_date_fields)
@@ -88,9 +86,5 @@ def test_properties():
 
     assert Month.strptime('2019/1', '%Y/%m') == Month(2019, 1)
 
-    assert Month(2020, 1).is_year(2020)
-    assert Month(2020, 1).is_month(1)
-    assert Month(2020, 1).is_quarter(1)
-
-
+    assert pickle.loads(pickle.dumps(Month(2019, 1), protocol=pickle.HIGHEST_PROTOCOL)) == Month(2019, 1)
 

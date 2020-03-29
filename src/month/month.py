@@ -60,9 +60,9 @@ def _parse_isoformat_month(mstr):
 def _add_month(year, month, additional_month):
     year, month = _check_date_fields(year, month)
     additional_month = _check_int_field(additional_month)
-    years, months = divmod(month + additional_month, 12)
+    years, new_month = divmod(month + additional_month - 1, 12)
+    new_month += 1
     new_year = year + years
-    new_month = months
     return new_year, new_month
 
 
@@ -185,6 +185,16 @@ class MDelta:
     def _cmp(self, other):
         assert isinstance(other, MDelta)
         return _cmp(self._months, other._months)
+
+    # pickle
+    def __setstate__(self, string):
+        self._months = string
+
+    def __getstate__(self):
+        return self._months
+
+    def __reduce__(self):
+        return self.__class__, (self.__getstate__(), )
 
 
 class Month:
@@ -325,19 +335,19 @@ class Month:
         _datetime = datetime.strptime(date_string, format)
         return cls(_datetime.year, _datetime.month)
 
-    def is_year(self, year):
-        return self.year == year
-
-    def is_month(self, month):
-        return self.month == month
-
-    def is_quarter(self, quarter):
-        return self.quarter == quarter
-
     def _cmp(self, other):
         assert isinstance(other, Month)
         y, m = self._year, self._month
         y2, m2 = other._year, other._month
         return _cmp((y, m), (y2, m2))
 
+    # pickle
+    def __setstate__(self, string):
+        self._year, self._month = string
+
+    def __getstate__(self):
+        return self._year, self._month
+
+    def __reduce__(self):
+        return self.__class__, self.__getstate__()
 

@@ -1,4 +1,4 @@
-from .month import Month, _check_int_field, _check_date_fields
+from .month import Month, MDelta, _check_int_field, _check_date_fields
 from datetime import date, timedelta
 
 # from datetime:
@@ -29,7 +29,7 @@ def _days_in_month(year, month):
 
 class XMonth(Month):
     """
-    extended month functions:
+    extended month:
     """
     def __new__(cls, year: int, month: int):
         return super().__new__(cls, year=year, month=month)
@@ -38,7 +38,7 @@ class XMonth(Month):
         super().__init__(year=year, month=month)
 
     @classmethod
-    def from_integer(cls, date_int):
+    def from_integer(cls, date_int: int):
         """
         convert int representation to month;
         :param date_int: yearmonth, 202001, month must consist of 2 places, i.e., Jan is represented by 01;
@@ -63,13 +63,80 @@ class XMonth(Month):
     def is_leap_year(self):
         return _is_leap(self.year)
 
+    def is_year(self, year: int):
+        return self.year == year
+
+    def is_month(self, month: int):
+        return self.month == month
+
+    def is_quarter(self, quarter: int):
+        return self.quarter == quarter
+
     def days(self):
         return _days_in_month(self.year, self.month)
 
-    def is_in_this_month(self, date_time):
-        return self == Month(date_time.year, date_time.month)
+    def contain_date(self, date_time):
+        return self._year == date_time.year and self._month == date_time.month
 
-    def next_n_month(self, n=1):
+    def next_month(self, n=1):
         return self + n
 
+    def __iter__(self):
+        return self
 
+    def __next__(self):
+        return self.next_month(n=1)
+
+    def dates(self, step: int = 1):
+        if step == 0:
+            raise ValueError("step cannot be of magnitude 0.")
+        step = _check_int_field(step)
+
+        if step < 0:
+            _date = self.last_date()
+        else:
+            _date = self.first_date()
+
+        index = 0
+        while self.contain_date(_date):
+            yield index, _date
+            index += 1
+            _date = _date + timedelta(days=step)
+
+    @classmethod
+    def range(cls, starting_month, ending_month, step=None):
+        def _convert(m):
+            if isinstance(m, Month):
+                pass
+            elif isinstance(m, int):
+                m = XMonth.from_integer(date_int=m)
+            else:
+                raise TypeError("type of month (%s) is not supported." % m)
+
+            return m
+
+        current_month = _convert(m=starting_month)
+        ending_month = _convert(m=ending_month)
+
+        if step is None:
+            if ending_month >= current_month:
+                step = 1
+            else:
+                step = -1
+
+        if isinstance(step, MDelta):
+            pass
+        elif isinstance(step, int):
+            if step == 0:
+                raise ValueError("step cannot be of magnitude 0.")
+            step = MDelta(months=step)
+        else:
+            raise TypeError("type of step (%s) is not supported." % step)
+
+        trend = 1 if step > MDelta(0) else -1
+
+        index = 0
+        while trend * (ending_month - current_month) > MDelta(0):
+            yield index, current_month
+            index += 1
+            current_month = current_month + step

@@ -6,6 +6,8 @@ from mock import patch, call
 import pytest
 from month import month
 from month.month import MDelta
+import pickle
+
 
 con_data = [({}, 0),  # null case;
     (15, 15),  # case without kwargs;
@@ -84,3 +86,5 @@ def test_delta_operations():
 
     assert delta_1 + 5 == MDelta(34)
     assert delta_1 - 5 == MDelta(24)
+
+    assert pickle.loads(pickle.dumps(delta_1, protocol=pickle.HIGHEST_PROTOCOL))._months == 29

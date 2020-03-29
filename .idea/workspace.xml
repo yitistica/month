@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8ac4b5e-3e1b-45a5-8f94-29a76d0ccae0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/test_xmonth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/month/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/month/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/month/month.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/month/month.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/month/x_month.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/month/x_month.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_mdelta.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_mdelta.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_month.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_month.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_xmonth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_xmonth.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +27,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/tests" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -39,7 +42,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python tests.pytest for test_xmonth.test_x_month">
-    <configuration name="month" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="month" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -47,17 +50,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/month" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/month/month.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_mdelta.test_delta_operations" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="month" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_mdelta.test_delta_operations&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest for test_month.test_month_construct" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
@@ -72,36 +90,6 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_month.test_month_construct&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_month.test_properties" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="month" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_month.test_properties&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_xmonth.test_methods" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="month" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_xmonth.test_methods&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -120,13 +108,28 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test_month.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="month" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_month.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.pytest for test_xmonth.test_x_month" />
-        <item itemvalue="Python tests.pytest for test_xmonth.test_methods" />
+        <item itemvalue="Python.scratch_1" />
+        <item itemvalue="Python tests.pytest for test_mdelta.test_delta_operations" />
+        <item itemvalue="Python tests.pytest in test_month.py" />
         <item itemvalue="Python tests.pytest for test_month.test_month_construct" />
-        <item itemvalue="Python tests.pytest for test_month.test_properties" />
-        <item itemvalue="Python.month" />
       </list>
     </recent_temporary>
   </component>
@@ -174,46 +177,46 @@
     </state>
     <state x="424" y="232" key="FileChooserDialogImpl/0.0.1792.1120@0.0.1792.1120" timestamp="1584898961918" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584879200901" />
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1585164481437">
+    <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1585464240025">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585164481437" />
+    <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585464240025" />
     <state width="1899" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
     <state width="1914" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
-    <state width="1771" height="318" key="GridCell.Tab.0.center" timestamp="1585164481436">
+    <state width="1771" height="318" key="GridCell.Tab.0.center" timestamp="1585464240024">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585164481436" />
+    <state width="1771" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585464240024" />
     <state width="1899" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
     <state width="1914" height="189" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
-    <state width="1771" height="318" key="GridCell.Tab.0.left" timestamp="1585164481435">
+    <state width="1771" height="318" key="GridCell.Tab.0.left" timestamp="1585464240023">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585164481435" />
+    <state width="1771" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585464240023" />
     <state width="1899" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
     <state width="1914" height="189" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
-    <state width="1771" height="318" key="GridCell.Tab.0.right" timestamp="1585164481436">
+    <state width="1771" height="318" key="GridCell.Tab.0.right" timestamp="1585464240024">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585164481436" />
+    <state width="1771" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585464240024" />
     <state width="1899" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584892383352" />
     <state width="1914" height="189" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584880034843" />
-    <state width="1771" height="391" key="GridCell.Tab.1.bottom" timestamp="1585157593504">
+    <state width="1771" height="391" key="GridCell.Tab.1.bottom" timestamp="1585462056754">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="391" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585157593504" />
-    <state width="1771" height="391" key="GridCell.Tab.1.center" timestamp="1585157593503">
+    <state width="1771" height="391" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585462056754" />
+    <state width="1771" height="391" key="GridCell.Tab.1.center" timestamp="1585462056753">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="391" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585157593503" />
-    <state width="1771" height="391" key="GridCell.Tab.1.left" timestamp="1585157593503">
+    <state width="1771" height="391" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585462056753" />
+    <state width="1771" height="391" key="GridCell.Tab.1.left" timestamp="1585462056753">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="391" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585157593503" />
-    <state width="1771" height="391" key="GridCell.Tab.1.right" timestamp="1585157593504">
+    <state width="1771" height="391" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585462056753" />
+    <state width="1771" height="391" key="GridCell.Tab.1.right" timestamp="1585462056754">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="391" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585157593504" />
+    <state width="1771" height="391" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585462056754" />
     <state x="449" y="179" key="SettingsEditor" timestamp="1584898971271">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
