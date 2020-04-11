@@ -39,7 +39,7 @@ if __name__ == '__main__':
         include_package_data=True,
         keywords='month',
         name='month',
-        packages=find_packages(include=['src']),
+        packages=find_packages(where='src'),
         package_dir={'': 'src'},
         setup_requires=setup_requirements,
         test_suite='tests',
