@@ -27,14 +27,9 @@ Installation
   pip install https://github.com/yitistica/month
 
 
-Main Features
--------------
+Features & Usage
+----------------
 
-
-
-
-Usage
------
 To construct a month object:
 
 .. code-block:: python
@@ -45,8 +40,8 @@ To construct a month object:
    m = Month(2020, 04)
    xm = Xmonth(2020, 04)
 
-Additional construction methods below can be used to translating a **tuple** (year, month), a **isoformat** string,
-an **ordinal** int and **format** string.
+Additional construction methods below can be used to translating a *tuple* (year, month), a *isoformat* string,
+an *ordinal* int and *month-format* string.
 
 .. code-block:: python
 
@@ -81,7 +76,7 @@ Some arithmetic operations and comparisons are also supported for **Month** obje
    Month(2020, 1) - 2  # returns Month(2019, 11);
    Month(2020, 04) <= Month(2020, 06)  # return True;
 
-**XMonth** is extended version of **Month** for including some convenient manipulations and relational operations with date object.
+**XMonth** is extended version of **Month** for including some convenient manipulations and operations with the dates.
 
 .. code-block:: python
 
@@ -99,9 +94,6 @@ License
 
 Credits
 -------
-
-This package shares
-
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
