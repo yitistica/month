@@ -3,8 +3,6 @@ month package
 =============
 
 
-.. image:: https://img.shields.io/pypi/v/month.svg
-        :target: https://pypi.python.org/pypi/month
 
 .. image:: https://img.shields.io/travis/yitistica/month.svg
         :target: https://travis-ci.com/yitistica/month
