@@ -15,7 +15,7 @@ month package
 About
 -----
 This is a util package that handles datetime at month level. The package is made up of two modules: *month* and *x_month*.
-The *month* module supplies the base classes for manipulating month in a similar fashion as how *datetime* module is built.
+The *month* module supplies the base classes for manipulating month-level time and is built in a similar fashion to *datetime* module.
 The *x_month* module extended the base classes from the *month* module to include additional functionalities.
 
 
@@ -40,8 +40,8 @@ To construct a month object:
    m = Month(2020, 04)
    xm = Xmonth(2020, 04)
 
-Additional construction methods below can be used to translating a *tuple* (year, month), a *isoformat* string,
-an *ordinal* int and *month-format* string.
+Additional construction methods below can be used to translate a *tuple* (year, month), a *isoformat* string,
+an *ordinal* int and *month-format* string into a **Month** object.
 
 .. code-block:: python
 
@@ -51,7 +51,7 @@ an *ordinal* int and *month-format* string.
    m = Month.strptime('2019/1', '%Y/%m')  # using string format like datetime;
 
 
-For the representation of the difference between two months, we can use **Mdelta** (similar to *timedelta* in datetime modules. For construction
+For the representation of the difference between two months, we can use **Mdelta** (similar to *timedelta* in datetime modules. To construct:
 
 .. code-block:: python
 
@@ -76,7 +76,7 @@ Some arithmetic operations and comparisons are also supported for **Month** obje
    Month(2020, 1) - 2  # returns Month(2019, 11);
    Month(2020, 04) <= Month(2020, 06)  # return True;
 
-**XMonth** is extended version of **Month** for including some convenient manipulations and operations with the dates.
+**XMonth** is an extended version of **Month** by including some convenient manipulation and sub-level operations.
 
 .. code-block:: python
 
