@@ -46,7 +46,7 @@ To construct a month object:
    xm = Xmonth(2020, 04)
 
 Additional construction methods below can be used to translating a **tuple** (year, month), a **isoformat** string,
-an *ordinal** int and **format** string.
+an **ordinal** int and **format** string.
 
 .. code-block:: python
 
@@ -56,14 +56,42 @@ an *ordinal** int and **format** string.
    m = Month.strptime('2019/1', '%Y/%m')  # using string format like datetime;
 
 
-For the representation of the difference between two months, we can use *Mdelta* (similar to *timedelta* in datetime modules. For construction
+For the representation of the difference between two months, we can use **Mdelta** (similar to *timedelta* in datetime modules. For construction
 
 .. code-block:: python
 
    from month import MDelta
    delta = Mdelta(2)  # Mdelta(months), months: int;
 
-*Mdelta* supports comparisons using operators.
+**Mdelta** supports comparisons using operators. It also supports some arithmetic operations (addition, subtraction, and multiplication)
+among Mdelta objects or with Month objects or int objects.
+
+.. code-block:: python
+
+   Mdelta(2) < Mdelta(3)  # returns bool;
+   Mdelta(2) - Mdelta(3)  # returns Mdelta(-1);
+   Mdelta(2) * 2 # returns Mdelta(4);
+
+Some arithmetic operations and comparisons are also supported for **Month** objects.
+
+.. code-block:: python
+
+   Month(2019, 11).add(MDelta(2)) # returns Month(2020, 1);
+   Month(2020, 04) + Mdelta(2)  # returns Month(2020, 6);
+   Month(2020, 1) - 2  # returns Month(2019, 11);
+   Month(2020, 04) <= Month(2020, 06)  # return True;
+
+**XMonth** is extended version of **Month** for including some convenient manipulations and relational operations with date object.
+
+.. code-block:: python
+
+   xm = XMonth(2019, 11)
+   xm.days()  # returns total days in the month;
+   xm.first_date()  # return the first date of the month date(2019,11,1), also xm.last_date() for the last date;
+   xm.dates(step=2)  # a generator that returns the index and dates within the month in increment by step days; if negative, the starting date is the last date of the month;
+   XMonth.range(starting_month, ending_month, step=1)  # a generator that returns the Month objects incrementally by step between starting_month and ending_month;
+
+
 License
 --------
 * Free software: MIT license
