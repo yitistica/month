@@ -26,4 +26,3 @@ deploy:
   on:
     branch: master
     repo: yitistica/month
-    python: 3.8
