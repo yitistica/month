@@ -38,7 +38,7 @@ if __name__ == '__main__':
         long_description=readme + '\n\n' + history,
         include_package_data=True,
         keywords='month',
-        name='month',
+        name='datetime-month',
         packages=find_packages(where='src'),
         package_dir={'': 'src'},
         setup_requires=setup_requirements,
