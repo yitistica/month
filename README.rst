@@ -1,6 +1,6 @@
-=============
-month package
-=============
+=====
+month
+=====
 
 
 .. image:: https://img.shields.io/pypi/v/datetime-month.svg
@@ -14,11 +14,11 @@ month package
     :alt: Documentation Status
 
 
-A package that handles time at the month level.
+A package that handles calendar months and arithmetic operation of months.
 
 The package is made up of two modules: **month** and **x_month**.
-The **month** module supplies the base classes for manipulating month-level time and is in similar fashion to *datetime* module.
-The **x_month** module extended the base classes from the *month* module to include additional functionalities.
+**month** module provides the base classes for manipulating month-level time.
+**x_month** module extends the base classes from the *month* module to include additional functionalities.
 
 
 Installation
@@ -53,7 +53,7 @@ an *ordinal* int and *month-format* string into a **Month** object.
    # isoformat is defined as a str in "year-month" format:
    m = Month.fromisoformat('2019-12')
 
-   # ordinal is supposedly in date unit, we extract its year and month after constructing a datetime.date object:
+   # ordinal (as in date units):
    m = Month.fromordinal(737390)
 
    # using string format like datetime:
@@ -82,7 +82,7 @@ Some arithmetic operations and comparisons are also supported for **Month** obje
    Month(2019, 11).add(MDelta(2)) # returns Month(2020, 1);
    Month(2020, 04) + Mdelta(2)  # returns Month(2020, 6);
    Month(2020, 1) - 2  # returns Month(2019, 11);
-   Month(2020, 04) <= Month(2020, 06)  # return True;
+   Month(2020, 04) <= Month(2020, 06)  # returns True;
 
 **XMonth** is an extended version of **Month** by including some convenient manipulation and sub-level operations.
 
@@ -92,7 +92,7 @@ Some arithmetic operations and comparisons are also supported for **Month** obje
 
    xm.days()  # returns total days in the month;
 
-   xm.first_date()  # return date(2019,11,1)
+   xm.first_date()  # returns date(2019,11,1)
 
    # iterate dates within the month in increment by step days:
    xm.dates(step=2)
