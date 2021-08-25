@@ -16,7 +16,7 @@ month
 
 A package that handles calendar months and arithmetic operation of months.
 
-The package is made up of two modules: **month** and **x_month**.
+The package comprises two modules: **month** and **x_month**.
 **month** module provides the base classes for manipulating month-level time.
 **x_month** module extends the base classes from the *month* module to include additional functionalities.
 
