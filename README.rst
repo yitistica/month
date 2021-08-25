@@ -3,20 +3,22 @@ month package
 =============
 
 
+.. image:: https://img.shields.io/pypi/v/datetime-month.svg
+        :target: https://pypi.python.org/pypi/datetime-month
 
 ..  image:: https://img.shields.io/travis/yitistica/month.svg
         :target: https://travis-ci.com/yitistica/month
 
-..
-    image:: https://readthedocs.org/projects/month/badge/?version=latest
+..  image:: https://readthedocs.org/projects/month/badge/?version=latest
     :target: https://month.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
-About
------
-This is a util package that handles datetime at month level. The package is made up of two modules: *month* and *x_month*.
-The *month* module supplies the base classes for manipulating month-level time and is built in a similar fashion to *datetime* module.
-The *x_month* module extended the base classes from the *month* module to include additional functionalities.
+
+A package that handles time at the month level.
+
+The package is made up of two modules: **month** and **x_month**.
+The **month** module supplies the base classes for manipulating month-level time and is in similar fashion to *datetime* module.
+The **x_month** module extended the base classes from the *month* module to include additional functionalities.
 
 
 Installation
@@ -24,7 +26,7 @@ Installation
 
 .. code-block::
 
-  pip install https://github.com/yitistica/month
+  pip install datetime-month
 
 
 Features & Usage
@@ -45,11 +47,17 @@ an *ordinal* int and *month-format* string into a **Month** object.
 
 .. code-block:: python
 
-   m = Month.fromtuple((2019, 11))  # constructed from a (year, month) tuple;
-   m = Month.fromisoformat('2019-12')  # isoformat is defined as a str in "year-month" format;
-   m = Month.fromordinal(737390)  # ordinal is supposedly in date unit, we extract its year and month after constructing a datetime.date object.
-   m = Month.strptime('2019/1', '%Y/%m')  # using string format like datetime;
+   # constructed from a (year, month) tuple:
+   m = Month.fromtuple((2019, 11))
 
+   # isoformat is defined as a str in "year-month" format:
+   m = Month.fromisoformat('2019-12')
+
+   # ordinal is supposedly in date unit, we extract its year and month after constructing a datetime.date object:
+   m = Month.fromordinal(737390)
+
+   # using string format like datetime:
+   m = Month.strptime('2019/1', '%Y/%m')
 
 For the representation of the difference between two months, we can use **Mdelta** (similar to *timedelta* in datetime modules. To construct:
 
@@ -81,11 +89,16 @@ Some arithmetic operations and comparisons are also supported for **Month** obje
 .. code-block:: python
 
    xm = XMonth(2019, 11)
-   xm.days()  # returns total days in the month;
-   xm.first_date()  # return the first date of the month date(2019,11,1), also xm.last_date() for the last date;
-   xm.dates(step=2)  # a generator that returns the index and dates within the month in increment by step days; if negative, the starting date is the last date of the month;
-   XMonth.range(starting_month, ending_month, step=1)  # a generator that returns the Month objects incrementally by step between starting_month and ending_month;
 
+   xm.days()  # returns total days in the month;
+
+   xm.first_date()  # return date(2019,11,1)
+
+   # iterate dates within the month in increment by step days:
+   xm.dates(step=2)
+
+   # iterate months in a given range:
+   XMonth.range(starting_month, ending_month, step=1)
 
 License
 --------

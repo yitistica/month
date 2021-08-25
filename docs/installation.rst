@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install month package, run this command in your terminal:
+To install datetime-month, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install month
+    $ pip install datetime-month
 
-This is the preferred method to install month package, as it will always install the most recent stable release.
+This is the preferred method to install datetime-month package, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.

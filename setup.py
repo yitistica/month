@@ -45,6 +45,6 @@ if __name__ == '__main__':
         test_suite='tests',
         tests_require=test_requirements,
         url='https://github.com/yitistica/month',
-        version='0.1.2',
+        version='0.1.3',
         zip_safe=False,
     )
