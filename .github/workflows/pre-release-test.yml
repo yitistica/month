@@ -1,5 +1,5 @@
 
-name: Merge and Test
+name: Test
 
 on:
   push:
