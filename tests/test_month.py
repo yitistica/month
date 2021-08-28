@@ -10,7 +10,8 @@ from month.month import Month, MDelta, date
 import pickle
 
 
-@patch.object(month_module, '_check_date_fields', wraps=month_module._check_date_fields)
+@patch.object(month_module, '_check_date_fields',
+              wraps=month_module._check_date_fields)
 def test_month_construct(_check_date_fields):
     # normal case:
     mon = Month(2019, 11)
@@ -21,7 +22,8 @@ def test_month_construct(_check_date_fields):
     # out of bound error (year):
     with pytest.raises(ValueError) as exec_info:
         Month(-1, 2)
-    assert exec_info.value.args[0] == 'year must be in %d..%d' % (month_module.MINYEAR, month_module.MAXYEAR)
+    assert exec_info.value.args[0] == 'year must be in %d..%d' \
+           % (month_module.MINYEAR, month_module.MAXYEAR)
     assert exec_info.value.args[1] == -1
 
     with pytest.raises(ValueError) as exec_info:
@@ -75,15 +77,25 @@ def test_properties():
     assert Month(2019, 11) > Month(2019, 10)
     assert Month(2019, 10) < Month(2019, 11)
 
-    assert Month(2019, 11).add(MDelta(2)) == Month(2019, 11).add(2) == \
-            Month(2019, 11) + MDelta(2) == Month(2019, 11) + 2 == Month(2019, 11) - MDelta(-2) == Month(2020, 1)
-    assert Month(2019, 11).subtract(MDelta(2)) == Month(2019, 11).subtract(2) == Month(2019, 11) - 2 == \
-            Month(2019, 11) - MDelta(2) == Month(2019, 11) + MDelta(-2) == Month(2019, 9)
+    assert Month(2019, 11).add(MDelta(2)) == Month(2019, 11).add(2) \
+           == Month(2019, 11) + MDelta(2) \
+           == Month(2019, 11) + 2 \
+           == Month(2019, 11) - MDelta(-2) \
+           == Month(2020, 1)
+    assert Month(2019, 11).subtract(MDelta(2)) \
+           == Month(2019, 11).subtract(2) \
+           == Month(2019, 11) - 2 \
+           == Month(2019, 11) - MDelta(2) \
+           == Month(2019, 11) + MDelta(-2) \
+           == Month(2019, 9)
 
-    assert Month(2019, 11).diff(Month(2019, 9)) == Month(2019, 11) - Month(2019, 9) == MDelta(2)
+    assert Month(2019, 11).diff(Month(2019, 9)) \
+           == Month(2019, 11) - Month(2019, 9) == MDelta(2)
 
     assert Month(2019, 1).strftime('%Y/%m') == '2019/01'
 
     assert Month.strptime('2019/1', '%Y/%m') == Month(2019, 1)
 
-    assert pickle.loads(pickle.dumps(Month(2019, 1), protocol=pickle.HIGHEST_PROTOCOL)) == Month(2019, 1)
+    assert pickle.loads(pickle.dumps(Month(2019, 1),
+                                     protocol=pickle.HIGHEST_PROTOCOL)) \
+           == Month(2019, 1)

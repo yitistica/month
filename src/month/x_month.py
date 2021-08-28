@@ -15,7 +15,7 @@ def _is_leap(year):
 def _days_before_year(year):
     "year -> number of days before January 1st of year."
     y = year - 1
-    return y*365 + y//4 - y//100 + y//400
+    return y * 365 + y // 4 - y // 100 + y // 400
 
 
 # from datetime;
@@ -31,6 +31,7 @@ class XMonth(Month):
     """
     extended month:
     """
+
     def __new__(cls, year: int, month: int):
         return super().__new__(cls, year=year, month=month)
 
@@ -41,7 +42,8 @@ class XMonth(Month):
     def from_integer(cls, date_int: int):
         """
         convert int representation to month;
-        :param date_int: yearmonth, 202001, month must consist of 2 places, i.e., Jan is represented by 01;
+        :param date_int: yearmonth, 202001,
+            month must consist of 2 places, i.e., Jan is represented by 01;
         :return:
         """
         date_int = _check_int_field(date_int)
@@ -51,7 +53,8 @@ class XMonth(Month):
         return cls(year, month)
 
     def to_int(self):
-        return int(str(self.year) + ('0' + str(self.month) if self.month < 10 else str(self.month)))
+        return int(str(self.year) + ('0' + str(self.month)
+                                     if self.month < 10 else str(self.month)))
 
     def first_date(self):
         return date(self.year, self.month, 1)

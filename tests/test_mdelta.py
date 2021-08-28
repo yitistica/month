@@ -8,16 +8,15 @@ from month import month
 from month.month import MDelta
 import pickle
 
-
 con_data = [({}, 0),  # null case;
-    (15, 15),  # case without kwargs;
+            (15, 15),  # case without kwargs;
 
-    ({'years': 2, 'months': 3}, 27),
-    ({'years': 1}, 12),
-    ({'months': 2}, 2),
+            ({'years': 2, 'months': 3}, 27),
+            ({'years': 1}, 12),
+            ({'months': 2}, 2),
 
-    ({'years': 2.5, 'months': 1.2}, 'TypeError'),  # inaccurate type, raise;
-    ]
+            ({'years': 2.5, 'months': 1.2}, 'TypeError'),
+            ]
 
 
 @pytest.mark.parametrize("kwargs, expected", con_data)
@@ -37,20 +36,22 @@ def test_mdelta_construct(check_int_field_func, kwargs, expected):
             else:
                 int_check_calls = [call(months)]
 
-        elif isinstance(kwargs, int):  # optional is supplied, representing months;
+        elif isinstance(kwargs, int):
+            # optional is supplied, representing months;
             case = MDelta(kwargs)
             int_check_calls = [call(kwargs)]
         else:
             raise TypeError(f'check arg types.')
 
-        check_int_field_func.assert_has_calls(int_check_calls, any_order=False)  # test type;
+        check_int_field_func.assert_has_calls(int_check_calls, any_order=False)
         assert case.months == expected  # test conversion;
 
     else:  # test wrong input:
         if expected == 'TypeError':
             with pytest.raises(TypeError) as execinfo:
                 MDelta(**kwargs)
-            assert execinfo.value.args[0] == 'integer argument expected, got float'
+            assert \
+                execinfo.value.args[0] == 'integer argument expected, got float'
 
 
 def test_delta_operations():
@@ -87,5 +88,6 @@ def test_delta_operations():
     assert delta_1 + 5 == MDelta(34)
     assert delta_1 - 5 == MDelta(24)
 
-    assert pickle.loads(pickle.dumps(delta_1, protocol=pickle.HIGHEST_PROTOCOL))._months == 29
-
+    assert pickle.loads(
+        pickle.dumps(delta_1,
+                     protocol=pickle.HIGHEST_PROTOCOL))._months == 29

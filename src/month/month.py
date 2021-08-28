@@ -288,7 +288,8 @@ class Month:
 
     def add(self, delta):
         if isinstance(delta, MDelta):
-            new_year, new_month = _add_month(self.year, self.month, delta.months)
+            new_year, new_month = \
+                _add_month(self.year, self.month, delta.months)
             return Month(new_year, new_month)
         elif isinstance(delta, int):
             return self.add(MDelta(months=delta))
@@ -298,7 +299,8 @@ class Month:
     def subtract(self, delta):
         if isinstance(delta, MDelta):
             delta = -delta
-            new_year, new_month = _add_month(self.year, self.month, delta.months)
+            new_year, new_month = \
+                _add_month(self.year, self.month, delta.months)
             return Month(new_year, new_month)
         elif isinstance(delta, int):
             mdelta = MDelta(months=delta)
@@ -313,7 +315,8 @@ class Month:
         :return:
         """
         if isinstance(other, Month):
-            diff_month = self._year * 12 + self._month - other._year * 12 - other._month
+            diff_month = \
+                self._year * 12 + self._month - other._year * 12 - other._month
             return MDelta(months=diff_month)
         else:
             raise TypeError(f"dif {type(other)} type is not allowed.")
@@ -328,11 +331,14 @@ class Month:
             return self.diff(other)
 
     def strftime(self, fmt):
-        return fmt.replace('%Y', str(self.year)).replace("%m", '0' + str(self.month) if self.month < 10 else str(self.month))
+        return \
+            fmt.replace('%Y', str(self.year)).replace(
+                "%m", '0' + str(self.month)
+                if self.month < 10 else str(self.month))
 
     @classmethod
-    def strptime(cls, date_string, format):
-        _datetime = datetime.strptime(date_string, format)
+    def strptime(cls, date_string, fmt):
+        _datetime = datetime.strptime(date_string, fmt)
         return cls(_datetime.year, _datetime.month)
 
     def _cmp(self, other):
@@ -350,4 +356,3 @@ class Month:
 
     def __reduce__(self):
         return self.__class__, self.__getstate__()
-
