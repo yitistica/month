@@ -59,7 +59,7 @@ an *ordinal* int and *month-format* string into a **Month** object.
    # using string format like datetime:
    m = Month.strptime('2019/1', '%Y/%m')
 
-For the representation of the difference between two months, we can use **Mdelta** (similar to *timedelta* in datetime modules. To construct:
+For the representation of the difference between two months, we can use **Mdelta** (similar to *timedelta* in datetime modules). To construct:
 
 .. code-block:: python
 
@@ -107,7 +107,7 @@ License
 
 Credits
 -------
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+This package was created with Cookiecutter_ and `audreyr/cookiecutter-pypackage`_ project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
