@@ -6,8 +6,8 @@ month
 .. image:: https://img.shields.io/pypi/v/datetime-month.svg
         :target: https://pypi.python.org/pypi/datetime-month
 
-..  image:: https://img.shields.io/travis/yitistica/month.svg
-        :target: https://travis-ci.com/yitistica/month
+..  image:: https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/pre-release-test/badge.svg
+        :target: https://github.com/yitistica/month/actions/workflows/pre-release-test.yml
 
 ..  image:: https://readthedocs.org/projects/month/badge/?version=latest
     :target: https://month.readthedocs.io/en/latest/?badge=latest
