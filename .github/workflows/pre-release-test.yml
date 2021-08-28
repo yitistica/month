@@ -27,6 +27,6 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install tox
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    -   name: Test with pytest
+    -   name: Test with pytest for ${{ matrix.python-version }}
         run: |
             tox
