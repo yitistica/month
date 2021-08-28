@@ -87,5 +87,3 @@ def test_properties():
     assert Month.strptime('2019/1', '%Y/%m') == Month(2019, 1)
 
     assert pickle.loads(pickle.dumps(Month(2019, 1), protocol=pickle.HIGHEST_PROTOCOL)) == Month(2019, 1)
-
-
