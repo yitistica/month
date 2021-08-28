@@ -27,7 +27,7 @@ jobs:
     - name: Build wheel
       run: python setup.py sdist
 
-    - name: Publish packge to Test PyPI
+    - name: Publish packge to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
