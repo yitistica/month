@@ -2,7 +2,22 @@
 
 """The setup script."""
 
+from pathlib import Path
+import json
 from setuptools import setup, find_packages
+
+# meta:
+meta_file_name = 'src/month/meta.json'
+meta_path = Path(__file__).resolve().parent.joinpath(meta_file_name)
+
+
+try:
+    with open(meta_path) as file:
+        meta = json.load(file)
+    del file
+except FileNotFoundError:
+    meta = dict()
+
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -19,8 +34,8 @@ test_requirements = ['pytest>=3', ]
 
 if __name__ == '__main__':
     setup(
-        author="Yi Q",
-        author_email='yitistica@outlook.com',
+        author=meta.get('__author__', '0.1.0'),
+        author_email=meta.get('__email__', '0.1.0'),
         python_requires='>=3.6',
         classifiers=[
             'Development Status :: 2 - Pre-Alpha',
@@ -37,7 +52,7 @@ if __name__ == '__main__':
         license="MIT license",
         long_description=readme + '\n\n' + history,
         include_package_data=True,
-        keywords='month',
+        keywords='month, date',
         name='datetime-month',
         packages=find_packages(where='src'),
         package_dir={'': 'src'},
@@ -45,6 +60,6 @@ if __name__ == '__main__':
         test_suite='tests',
         tests_require=test_requirements,
         url='https://github.com/yitistica/month',
-        version='1.0.0',
+        version=meta.get('__version__', '0.1.0'),
         zip_safe=False,
     )
