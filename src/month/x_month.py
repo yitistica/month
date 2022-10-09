@@ -7,20 +7,20 @@ _DAYS_IN_MONTH = [-1, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 # from datetime
 def _is_leap(year):
-    "year -> 1 if leap year, else 0."
+    """year -> 1 if leap year, else 0."""
     return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
 
 
 # from datetime
 def _days_before_year(year):
-    "year -> number of days before January 1st of year."
+    """year -> number of days before January 1st of year."""
     y = year - 1
     return y * 365 + y // 4 - y // 100 + y // 400
 
 
 # from datetime;
 def _days_in_month(year, month):
-    "year, month -> number of days in that month in that year."
+    """year, month -> number of days in that month in that year."""
     assert 1 <= month <= 12, month
     if month == 2 and _is_leap(year):
         return 29

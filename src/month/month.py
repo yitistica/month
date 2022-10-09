@@ -1,6 +1,6 @@
 """
 mdelta and month modules that mimic timedelta & datetime.date but for month as
-base unit; some functionality are derived from datetime module.
+base unit; some functions are derived from datetime module.
 """
 
 from datetime import datetime, date

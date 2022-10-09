@@ -34,8 +34,8 @@ test_requirements = ['pytest>=3', ]
 
 if __name__ == '__main__':
     setup(
-        author=meta.get('__author__', '0.1.0'),
-        author_email=meta.get('__email__', '0.1.0'),
+        author=meta.get('__author__', ''),
+        author_email=meta.get('__email__', ''),
         python_requires='>=3.6',
         classifiers=[
             'Development Status :: 2 - Pre-Alpha',
@@ -46,8 +46,10 @@ if __name__ == '__main__':
             'Programming Language :: Python :: 3.6',
             'Programming Language :: Python :: 3.7',
             'Programming Language :: Python :: 3.8',
+            'Programming Language :: Python :: 3.9',
+            'Programming Language :: Python :: 3.10',
         ],
-        description="a package that handles months",
+        description="a package that handles months.",
         install_requires=requirements,
         license="MIT license",
         long_description=readme + '\n\n' + history,
