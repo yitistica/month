@@ -41,7 +41,7 @@ def test_mdelta_construct(check_int_field_func, kwargs, expected):
             case = MDelta(kwargs)
             int_check_calls = [call(kwargs)]
         else:
-            raise TypeError(f'check arg types.')
+            raise TypeError('check arg types.')
 
         check_int_field_func.assert_has_calls(int_check_calls, any_order=False)
         assert case.months == expected  # test conversion;
@@ -51,7 +51,8 @@ def test_mdelta_construct(check_int_field_func, kwargs, expected):
             with pytest.raises(TypeError) as execinfo:
                 MDelta(**kwargs)
             assert \
-                execinfo.value.args[0] == 'integer argument expected, got float'
+                execinfo.value.args[0] == \
+                'integer argument expected, got float'
 
 
 def test_delta_operations():
