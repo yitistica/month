@@ -1,22 +1,12 @@
 #!/usr/bin/env python
 
 """The setup script."""
-
-from pathlib import Path
-import json
 from setuptools import setup, find_packages
 
 # meta:
-meta_file_name = 'src/month/meta.json'
-meta_path = Path(__file__).resolve().parent.joinpath(meta_file_name)
-
-
-try:
-    with open(meta_path) as file:
-        meta = json.load(file)
-    del file
-except FileNotFoundError:
-    meta = dict()
+meta = {"__author__": "Yi Q",
+        "__email__": "yitistica@outlook.com",
+        "__version__": "1.0.2"}
 
 
 with open('README.rst') as readme_file:
@@ -62,6 +52,6 @@ if __name__ == '__main__':
         test_suite='tests',
         tests_require=test_requirements,
         url='https://github.com/yitistica/month',
-        version=meta.get('__version__', '0.1.0'),
+        version=meta['__version__'],
         zip_safe=False,
     )
