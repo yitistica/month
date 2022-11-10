@@ -42,7 +42,7 @@ if __name__ == '__main__':
         description="a package that handles months.",
         install_requires=requirements,
         license="MIT license",
-        long_description=readme + '\n\n' + history,
+        long_description=readme + '\n\n' + history + '\n\n',
         include_package_data=True,
         keywords='month, date',
         name='datetime-month',
