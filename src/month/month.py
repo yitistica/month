@@ -291,7 +291,7 @@ class Month:
         if isinstance(delta, MDelta):
             new_year, new_month = \
                 _add_month(self.year, self.month, delta.months)
-            return Month(new_year, new_month)
+            return self.__class__(new_year, new_month)
         elif isinstance(delta, int):
             return self.add(MDelta(months=delta))
         else:
@@ -302,7 +302,7 @@ class Month:
             delta = -delta
             new_year, new_month = \
                 _add_month(self.year, self.month, delta.months)
-            return Month(new_year, new_month)
+            return self.__class__(new_year, new_month)
         elif isinstance(delta, int):
             mdelta = MDelta(months=delta)
             return self.subtract(mdelta)

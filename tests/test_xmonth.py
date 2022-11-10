@@ -53,3 +53,11 @@ def test_x_month():
             assert mon == XMonth(2020, 1)
 
     assert _total_months == 3
+
+
+def test_x_month_operator():
+    assert XMonth(2020, 1) + 1 == XMonth(2020, 2)
+    assert isinstance(XMonth(2020, 1) + 1, XMonth)
+    assert isinstance(XMonth(2020, 1) - 1, XMonth)
+    assert isinstance(Month(2020, 1) - 1, Month)
+    assert isinstance(Month(2020, 1) + 1, Month)
