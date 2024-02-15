@@ -22,8 +22,12 @@ History
 
 .. _#8: https://github.com/yitistica/month/pull/8
 
-
-1.0.5 (2023-11-10)
+1.0.5 (2024-02-15)
 ------------------
 
 * Add compatibility with Python 3.11 & 3.12.
+
+1.0.6 (2024-02-15)
+------------------
+
+* Fix ReadMe note.

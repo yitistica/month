@@ -39,8 +39,8 @@ To construct a month object:
    from month import Month
    from month import XMonth  # extended month;
 
-   m = Month(2020, 04)
-   xm = Xmonth(2020, 04)
+   m = Month(2020, 4)
+   xm = XMonth(2020, 4)
 
 Additional construction methods below can be used to translate a *tuple* (year, month), a *isoformat* string,
 an *ordinal* int and *month-format* string into a **Month** object.
@@ -107,7 +107,6 @@ License
 
 Credits
 -------
-This package was created with Cookiecutter_ and `audreyr/cookiecutter-pypackage`_ project template.
+The repo was initiated using `audreyr/cookiecutter-pypackage`_ project template.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
