@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 # meta:
 meta = {"__author__": "Yi Q",
         "__email__": "yitistica@outlook.com",
-        "__version__": "1.0.4"}
+        "__version__": "1.0.5"}
 
 
 with open('README.rst') as readme_file:
@@ -38,6 +38,8 @@ if __name__ == '__main__':
             'Programming Language :: Python :: 3.8',
             'Programming Language :: Python :: 3.9',
             'Programming Language :: Python :: 3.10',
+            'Programming Language :: Python :: 3.11',
+            'Programming Language :: Python :: 3.12'
         ],
         description="a package that handles months.",
         install_requires=requirements,
