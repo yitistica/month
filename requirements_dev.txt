@@ -1,3 +1,4 @@
+setuptools
 bump2version
 wheel
 flake8
